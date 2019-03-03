@@ -1,0 +1,26 @@
+<div class="file-picker" data-from="{{from}}" data-to="{{to}}">
+
+    <h2 class="file-picker__title">
+        {{from}} to {{to}}
+    </h2>
+
+    <input type="file"
+            name="file-picker__input--{{from}}"
+            id="file-picker__input--{{from}}"
+            class="file-picker__input"
+            accept=".{{from}}"
+            multiple />
+
+    <label for="file-picker__input--{{from}}"
+            class="file-picker__label">
+
+        <span class="file-picker__label__text">
+            {# TODO: Add translations #}
+            <span class="text--bold">Choose a file</span> or drag it here
+        </span>
+
+    </label>
+
+    <div class="file-picker__files"></div>
+
+</div>

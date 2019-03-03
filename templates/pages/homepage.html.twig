@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {% include 'head/_css.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    <div class="file-pickers">
+        {% include 'components/filePicker.html.twig' with {'from': 'xlsx', 'to': 'csv'} %}
+        {% include 'components/filePicker.html.twig' with {'from': 'csv', 'to': 'xlsx'} %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {% include 'footer/_js_footer.html.twig' %}
+{% endblock %}

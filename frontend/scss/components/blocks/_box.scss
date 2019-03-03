@@ -1,7 +1,11 @@
 /* ==========================================================================
-   Scaffolding
-
-   This file is exclusively intended for setting up imports
-   Never add styles directly to this file
+   Components - Blocks - Box
    ========================================================================== */
 
+.box {
+    display: flex;
+    margin: 6px;
+    padding: 20px;
+
+    box-shadow: 0 0 5px 0 rgba($black, .2);
+}

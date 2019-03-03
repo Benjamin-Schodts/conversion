@@ -7,5 +7,19 @@
 
 /* Default
    ========================================================================== */
-$white:  #FFFFFF;
-$black:  #000000;
+$white:             #FFFFFF;
+$black:             #000000;
+
+$grey:              #103C4A;
+$grey--lighter:     #93B0B3;
+$grey--light:       #C8DADF;
+$grey--lightest:    #FAFAFA;
+
+
+/* Specific
+   ========================================================================== */
+$text-color:                $grey;
+$text-color--light:         $grey--lighter;
+
+$file--border:              $grey--lighter;
+$file--background--hover:   $grey--lightest;

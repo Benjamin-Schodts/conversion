@@ -1,0 +1,164 @@
+/* ==========================================================================
+   Components - Blocks - Filepicker
+   ========================================================================== */
+
+$file-picker__label--border-width: 2px;
+$file-picker__label--outer-margin: 6px;
+
+.file-pickers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $screen-mobile) {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+.file-picker {
+    width: 300px;
+    margin: 20px;
+}
+
+.file-picker__title {
+    font-size: 20px;
+}
+
+.file-picker__label {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 200px;
+
+    color: $text-color;
+
+    text-align: center;
+
+    transition: all .2s ease;
+
+    &:before {
+        content: "";
+
+        position: absolute;
+        top: $file-picker__label--outer-margin;
+        left: $file-picker__label--outer-margin;
+
+        width: calc(100% - (#{$file-picker__label--outer-margin} + #{$file-picker__label--border-width}) * 2);
+        height: calc(100% - (#{$file-picker__label--outer-margin} + #{$file-picker__label--border-width}) * 2);
+
+        border: $file-picker__label--border-width dashed $file--border;
+        border-radius: 8px;
+
+        transition: all .2s ease;
+    }
+
+    &--drop {
+        &:before {
+            animation-name: bounce;
+            animation-duration: .5s;
+            animation-timing-function: ease-out;
+        }
+    }
+
+    &--dragging {
+        &:before {
+            background-color: $file--background--hover;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.file-picker__label__text {
+    z-index: 1;
+
+    padding: 0 20px;
+
+    user-select: none;
+
+    .file-picker__label:hover & {
+        span {
+            text-decoration: underline;
+        }
+    }
+}
+
+.file-picker__files__entry {
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: all .2s ease;
+
+    &:hover {
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+    }
+}
+
+.file-picker__files__entry__size {
+    color: $text-color--light;
+
+    font-size: 12px;
+}
+
+.file-picker__files__entry__link {
+    align-self: flex-end;
+    padding-top: 5px;
+
+    color: $text-color;
+
+    cursor: pointer;
+
+    .file-picker__files__entry:hover & {
+        text-decoration: underline;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        top: $file-picker__label--outer-margin;
+        left: $file-picker__label--outer-margin;
+
+        width: calc(100% - (#{$file-picker__label--outer-margin} + #{$file-picker__label--border-width}) * 2);
+        height: calc(100% - (#{$file-picker__label--outer-margin} + #{$file-picker__label--border-width}) * 2);
+    }
+
+    25% {
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    50% {
+        top: $file-picker__label--outer-margin;
+        left: $file-picker__label--outer-margin;
+
+        width: calc(100% - (#{$file-picker__label--outer-margin} + #{$file-picker__label--border-width}) * 2);
+        height: calc(100% - (#{$file-picker__label--outer-margin} + #{$file-picker__label--border-width}) * 2);
+    }
+
+    75% {
+        top: $file-picker__label--outer-margin * .5;
+        left: $file-picker__label--outer-margin * .5;
+
+        width: calc(100% - (#{$file-picker__label--outer-margin * .5} + #{$file-picker__label--border-width}) * 2);
+        height: calc(100% - (#{$file-picker__label--outer-margin * .5} + #{$file-picker__label--border-width}) * 2);
+    }
+
+    100% {
+        top: $file-picker__label--outer-margin;
+        left: $file-picker__label--outer-margin;
+
+        width: calc(100% - (#{$file-picker__label--outer-margin} + #{$file-picker__label--border-width}) * 2);
+        height: calc(100% - (#{$file-picker__label--outer-margin} + #{$file-picker__label--border-width}) * 2);
+    }
+}
