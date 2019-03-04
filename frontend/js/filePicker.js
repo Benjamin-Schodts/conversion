@@ -105,7 +105,6 @@ function filePickerFileHandler(event) {
     const target = event.target || event.srcElement;
     const parentFilePicker = getAncestor(target, CLASSES.PICKER);
 
-    const files = parentFilePicker.querySelector(`.${CLASSES.FILES}`);
     const input = parentFilePicker.querySelector(`.${CLASSES.INPUT}`);
 
     const droppedFiles = event.target.files || event.dataTransfer.files;
@@ -119,10 +118,10 @@ function filePickerFileHandler(event) {
 
             switch (true) {
                 case from === 'xlsx' && to === 'csv':
-                    fileHandler = new XlsxToCsv(files, file);
+                    fileHandler = new XlsxToCsv(parentFilePicker, file);
                     break;
                 case from === 'csv' && to === 'xlsx':
-                    fileHandler = new CsvToXlsx(files, file);
+                    fileHandler = new CsvToXlsx(parentFilePicker, file);
                     break;
             }
 

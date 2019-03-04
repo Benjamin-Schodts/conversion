@@ -1,3 +1,7 @@
+const CLASSES = {
+    FILES: 'file-picker__files'
+};
+
 /** Class representing a FileHandler. */
 class FileHandler {
     /**
@@ -32,7 +36,7 @@ class FileHandler {
      * and add the HTMLElement to the DOM.
      * @param {String} fileType - The file type / extension of the resulting file.
      */
-    createEntry(fileType) {
+    createEntry() {
         const container = document.createElement('div');
         container.classList = 'file-picker__files__entry box';
 
@@ -50,14 +54,15 @@ class FileHandler {
         container.appendChild(filesize);
 
         const link = document.createElement('a');
-        link.setAttribute('download', `${this.name}.${fileType}`);
-        link.innerHTML = `Download ${fileType}`;
+        link.setAttribute('download', `${this.name}.${this.container.dataset.to}`);
+        link.innerHTML = `Download ${this.container.dataset.to}`;
         link.className = 'file-picker__files__entry__link';
         link.addEventListener('click', this.download.bind(link, this));
 
         container.appendChild(link);
 
-        this.container.appendChild(container);
+        const filesContainer = this.container.querySelector(`.${CLASSES.FILES}`);
+        filesContainer.appendChild(container);
     }
 }
 

@@ -6,18 +6,8 @@ import FileHandler from './FileHandler';
 
 /** Class representing a CsvToXlsx FileHandler.
  * @extends FileHandler
-*/
+ */
 class CsvToXlsx extends FileHandler {
-    /**
-     * Create a CsvToXlsx File Handler
-     * @param {HTMLElement} container - The FilePicker Element.
-     * @param {File} file - The File to be handled.
-     */
-    constructor(container, file) {
-        super(container, file);
-        this.dataArray = [];
-    }
-
     /**
      * Convert file from CSV to XLSX.
      */
@@ -44,7 +34,7 @@ class CsvToXlsx extends FileHandler {
             const workSheet = XLSX.utils.aoa_to_sheet(dataArray);
             XLSX.utils.book_append_sheet(this.workBook, workSheet, 'Sheet1');
 
-            this.createEntry('xlsx');
+            this.createEntry();
         };
 
         reader.onerror = () => {

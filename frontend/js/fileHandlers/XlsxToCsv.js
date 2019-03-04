@@ -6,7 +6,7 @@ import FileHandler from './FileHandler';
 
 /** Class representing a CsvToXlsx FileHandler.
  * @extends FileHandler
-*/
+ */
 class XlsxToCsv extends FileHandler {
     /**
      * Convert file from XLSX to CSV.
@@ -25,7 +25,7 @@ class XlsxToCsv extends FileHandler {
             workbook.SheetNames.forEach((sheetName) => {
                 const csvContent = XLSX.utils.sheet_to_csv(workbook.Sheets[sheetName]);
                 this.downloadableContent = csvContent;
-                this.createEntry('csv');
+                this.createEntry();
             });
         };
 
