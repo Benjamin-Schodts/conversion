@@ -8,3 +8,6 @@ Conversion from and to xls/csv
 OR Drag&Drop files from your computer onto the dropzones.\
 **Step 4:** Click the download link in the newly added entry below the dropzone
 to get your converted file.
+
+## Frontend
+Frontend files can be found inside the root `frontend` folder

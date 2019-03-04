@@ -1,6 +1,7 @@
 // Imports
 import merge from 'webpack-merge';
 import path from 'path';
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 
 import common from './webpack.common.babel';
 import paths from './webpack.paths';
@@ -19,5 +20,8 @@ module.exports = merge(common, {
         },
         watchContentBase: true
     },
-    mode: 'development'
+    mode: 'development',
+    plugins: [
+        new BundleAnalyzerPlugin()
+    ]
 });

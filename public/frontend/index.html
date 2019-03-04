@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html><head><link href="css/styles.css" rel="stylesheet"></head>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Conversion</title>
+    <body>
+
+        <div class="file-pickers">
+            <div class="file-picker" data-from="xlsx" data-to="csv">
+
+                <h2 class="file-picker__title">
+                    XLSX to CSV
+                </h2>
+
+                <input type="file"
+                       name="file-picker__input--xls"
+                       id="file-picker__input--xls"
+                       class="file-picker__input"
+                       accept=".xlsx"
+                       multiple />
+
+                <label for="file-picker__input--xls"
+                       class="file-picker__label">
+
+                    <span class="file-picker__label__text">
+                        <span class="text--bold">Choose a file</span> or drag it here
+                    </span>
+
+                </label>
+
+                <div class="file-picker__files"></div>
+
+            </div>
+
+            <div class="file-picker" data-from="csv" data-to="xlsx">
+
+                <h2 class="file-picker__title">
+                    CSV to XLSX
+                </h2>
+
+                <input type="file"
+                    name="file-picker__input--csv"
+                    id="file-picker__input--csv"
+                    class="file-picker__input"
+                    accept=".csv"
+                    multiple />
+
+                <label for="file-picker__input--csv"
+                    class="file-picker__label">
+
+                    <span class="file-picker__label__text">
+                        <span class="text--bold">Choose a file</span> or drag it here
+                    </span>
+
+                </label>
+
+                <div class="file-picker__files"></div>
+
+            </div>
+        </div>
+    <script type="text/javascript" src="js/scripts.js"></script></body>
+</html>

@@ -1,12 +1,14 @@
 /* ==========================================================================
-   Config
+   Fonts
 
-   This file is exclusively intended for setting up imports
+   This file is exclusively intended for setting up variables
    Never add styles directly to this file
    ========================================================================== */
 
-/* General
+/* Webfonts
    ========================================================================== */
-@import "general/colors";
-@import "general/sizes";
-@import "general/fonts";
+$helvetica:         Helvetica, Arial, sans-serif;
+
+/* Defaults
+   ========================================================================== */
+$font-family--base: $helvetica;

@@ -28,12 +28,9 @@ let filePickers;
  * Initialise all file input types.
  */
 function init() {
-    if (checkCompatibility()) {
-        // TODO set compatibility mode
-        filePickers = querySelectorAll(`.${CLASSES.PICKER}`);
+    filePickers = querySelectorAll(`.${CLASSES.PICKER}`);
 
-        addEventListeners();
-    }
+    addEventListeners();
 }
 
 /**
@@ -145,14 +142,4 @@ function isCorrectType(filename, accepted) {
     const fileType = splitFilename[splitFilename.length - 1];
 
     return accepted.indexOf(fileType) > -1;
-}
-
-/**
- * Check if browser compatibility of drag & drop and file reading is present.
- * @return {boolean}
- */
-function checkCompatibility() {
-    const div = document.createElement('div');
-    return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div))
-        && 'FormData' in window && 'FileReader' in window;
 }

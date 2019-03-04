@@ -4,7 +4,6 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import multi from 'multi-loader';
 import path from 'path';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';
@@ -19,12 +18,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: multi(
-                        'babel-loader',
-                        'eslint-loader'
-                    )
-                }
+                use: [
+                    'babel-loader',
+                    'eslint-loader'
+                ]
             },
             {
                 test: /\.scss$/,

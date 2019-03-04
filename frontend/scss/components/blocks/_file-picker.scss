@@ -68,7 +68,8 @@ $file-picker__label--outer-margin: 6px;
 
     &--dragging {
         &:before {
-            background-color: $file--background--hover;
+            // background-color: ;
+            border-color: $file--border--hover;
         }
     }
 
@@ -78,8 +79,6 @@ $file-picker__label--outer-margin: 6px;
 }
 
 .file-picker__label__text {
-    z-index: 1;
-
     padding: 0 20px;
 
     user-select: none;
